@@ -33,5 +33,26 @@
     "owner": "Sarah",
     "deadline": "Wednesday",
     "is_confirmed": false
+  },
+  {
+    "description": "Prepare the final Q3 sales report",
+    "supporting_text": "Alice to prepare the final Q3 sales report by October 10th.",
+    "owner": "Alice",
+    "deadline": "2026-10-10",
+    "is_confirmed": true
+  },
+  {
+    "description": "Short note",
+    "supporting_text": "Bob to contact the design agency for the marketing materials by tomorrow.",
+    "owner": "Shree",
+    "deadline": "02/12/2027",
+    "is_confirmed": true
+  },
+  {
+    "description": "Schedule the all-hands meeting",
+    "supporting_text": "Charlie to schedule the all-hands meeting for next week.",
+    "owner": "Charlie",
+    "deadline": "next week",
+    "is_confirmed": true
   }
 ]

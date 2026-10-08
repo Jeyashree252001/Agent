@@ -5,7 +5,7 @@ load_dotenv()
 
 class Config:
     GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-    MODEL_NAME = os.getenv("MODEL_NAME", "gemini-3.5-flash-lite")
+    MODEL_NAME = os.getenv("MODEL_NAME", "gemini-3.5-flash")
     DATA_DIR = os.getenv("DATA_DIR", "data")
     OUTPUT_FILE = os.path.join(DATA_DIR, "approved_actions.json")
 
