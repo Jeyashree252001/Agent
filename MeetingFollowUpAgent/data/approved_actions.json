@@ -1,0 +1,37 @@
+[
+  {
+    "description": "Built a Notes Management Application for Microsoft Teams that allows users to create, edit, search, and organize meeting notes and action items. Developed responsive UI components, integrated REST APIs, and implemented secure data management to improve team collaboration and productivity.",
+    "supporting_text": "The team agreed to prepare example project data, but no owner was selected.",
+    "owner": "jeyashree",
+    "deadline": "25/11/2027",
+    "is_confirmed": true
+  },
+  {
+    "description": "Test the new reporting view with the project managers",
+    "supporting_text": "The new reporting view should probably be tested with the project managers. Laura suggested that the first test could happen next month.",
+    "owner": null,
+    "deadline": "next month",
+    "is_confirmed": false
+  },
+  {
+    "description": "Notes Taking Agent",
+    "supporting_text": "The team agreed to prepare example project data, but no owner was selected.",
+    "owner": "Jessie",
+    "deadline": "2/11/2027",
+    "is_confirmed": true
+  },
+  {
+    "description": "Handle the database migration",
+    "supporting_text": "John said he will handle the database migration by Friday.",
+    "owner": "John",
+    "deadline": "Friday",
+    "is_confirmed": false
+  },
+  {
+    "description": "Complete the database migration",
+    "supporting_text": "Sarah mentioned that she is already assigned to the database migration and will complete it by Wednesday.",
+    "owner": "Sarah",
+    "deadline": "Wednesday",
+    "is_confirmed": false
+  }
+]

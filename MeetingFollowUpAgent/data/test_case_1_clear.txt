@@ -1,0 +1,15 @@
+Meeting Date: October 5, 2026
+Attendees: Alice, Bob, Charlie
+
+Topics Discussed:
+1. Q3 Sales Report
+2. New Marketing Campaign
+
+Decisions Made:
+- We will launch the new marketing campaign on November 1st.
+- The budget for the Q3 sales report presentation is approved at $500.
+
+Actions:
+- Alice to prepare the final Q3 sales report by October 10th.
+- Bob to contact the design agency for the marketing materials by tomorrow.
+- Charlie to schedule the all-hands meeting for next week.

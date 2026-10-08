@@ -1,0 +1,4 @@
+[
+  "tests/test_models.py::test_action_item_model_defaults",
+  "tests/test_models.py::test_meeting_summary_model"
+]
