@@ -28,10 +28,3 @@ Meetings produce decisions, actions, and questions, but notes are often messy. A
    ```bash
    python -m pytest tests/
    ```
-
-## Known Limitations and Security or Privacy Considerations
-- **Limitations**: The application currently relies on a CLI interface. A more robust solution would involve a web UI. The date formatting is not strictly normalized to ISO-8601, as it extracts dates as mentioned in the text or requires clarification.
-- **Security/Privacy**: Meeting notes are sent to the Google Gemini API. If meeting notes contain sensitive PII or confidential company data, this data is transmitted externally. In a production environment, this might require a private LLM deployment or anonymization preprocessing.
-
-## Explanation of Generative AI Use During Development
-Generative AI (Gemini via Antigravity) was used to bootstrap the project structure, generate the Pydantic schema, structure the CLI interaction loop, and draft the documentation files. The prompts were tailored to strictly adhere to the assignment constraints (avoiding hallucination by requesting supporting text).
