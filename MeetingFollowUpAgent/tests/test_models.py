@@ -1,4 +1,5 @@
 import pytest
+from pydantic import ValidationError
 from src.models import MeetingSummary, ActionItem, DecisionItem
 
 def test_meeting_summary_model():
@@ -22,3 +23,65 @@ def test_action_item_model_defaults():
     assert action.owner is None
     assert action.deadline is None
     assert action.is_confirmed is False
+
+def test_meeting_summary_defaults():
+    # Only required fields provided: topics and summary
+    summary = MeetingSummary(topics=["Single Topic"], summary="Quick Summary")
+    assert summary.decisions == []
+    assert summary.actions == []
+    assert summary.open_questions == []
+    assert summary.risks_and_concerns == []
+    assert summary.missing_or_unclear_information == []
+
+def test_action_item_missing_required_fields():
+    # Missing supporting_text and is_confirmed
+    with pytest.raises(ValidationError) as exc_info:
+        ActionItem(description="Task without supporting text or confirmation")
+    errors = exc_info.value.errors()
+    missing_fields = {e["loc"][0] for e in errors}
+    assert "supporting_text" in missing_fields
+    assert "is_confirmed" in missing_fields
+
+def test_decision_item_missing_required_fields():
+    # Missing is_confirmed and supporting_text
+    with pytest.raises(ValidationError) as exc_info:
+        DecisionItem(description="Adopt PostgreSQL")
+    errors = exc_info.value.errors()
+    missing_fields = {e["loc"][0] for e in errors}
+    assert "supporting_text" in missing_fields
+    assert "is_confirmed" in missing_fields
+
+def test_meeting_summary_missing_required_fields():
+    # Missing summary and topics
+    with pytest.raises(ValidationError) as exc_info:
+        MeetingSummary()
+    errors = exc_info.value.errors()
+    missing_fields = {e["loc"][0] for e in errors}
+    assert "summary" in missing_fields
+    assert "topics" in missing_fields
+
+def test_model_invalid_types():
+    # Invalid description type (list instead of string)
+    with pytest.raises(ValidationError):
+        ActionItem(
+            description=["Should", "be", "a", "string"],  # type: ignore
+            supporting_text="Excerpt",
+            is_confirmed=True
+        )
+
+    # Invalid boolean type
+    with pytest.raises(ValidationError):
+        ActionItem(
+            description="Fix login bug",
+            supporting_text="Excerpt",
+            is_confirmed="not_a_valid_boolean"  # type: ignore
+        )
+
+    # Invalid actions list type (passing string instead of list of ActionItem)
+    with pytest.raises(ValidationError):
+        MeetingSummary(
+            topics=["Topic"],
+            actions="invalid_actions_list",  # type: ignore
+            summary="Summary"
+        )
+
